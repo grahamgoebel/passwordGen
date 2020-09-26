@@ -21,15 +21,35 @@
 
 var generateBtn = document.querySelector("#generate");
 
+ //my code here
+
+var length = Number(prompt("How many characters should your password be?"));
+while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("Length must be between 8-128 characters"));
+
+var upper = confirm("Would you like to include uppercase letters?");
+var lower = confirm("Would you like to include lowercase letters?");
+var numeric = confirm("Would you like to include numbers?");
+var special = confirm("Would you like to include special characters?");
+
+while (!upper && !lower && !numeric && !special) {
+    alert("Must select at least one character type");
+    upper = confirm("Would you like to include uppercase letters?");
+    lower = confirm("Would you like to include lowercase letters?");
+    numeric = confirm("Would you like to include numbers?");
+    special = confirm("Would you like to include special characters?");
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 //////////////////////////////////////////////////////////////////////
+
