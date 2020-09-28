@@ -42,14 +42,36 @@ while (!upper && !lower && !numeric && !special) {
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lower = "abcdefghijklmnopqrstuvwxyz";
+  var numeric = "1234567890";
+  var specialpassword = "!@#$%^&*();?/+[]{}<>";
+
+  var length = document.getElementById("length");
+  var upper = document.getElementById("upper");
+  var lower = document.getElementById("lower");
+  var numeric = document.getElementById("numeric");
+  var special = document.getElementById("special");
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}
+
+};
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
+
+    var length = length;
+    if (upper = true) length += upper = "";
+    if (lower = true) length += lower = "";
+    if (numeric = true) length += numeric = "";
+    if (special = true) length += special = "";
+
+
+;
 
 //////////////////////////////////////////////////////////////////////
 
